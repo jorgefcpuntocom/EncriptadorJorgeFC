@@ -1,0 +1,232 @@
+:root {
+    /* Variables */
+    --main-bg-color: #f4f7fc;
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --btn-color: #0a3871;
+    --accent-color: #ecf0f1;
+    --text-color: #2c3e50;
+    --button-hover-color: #2c3e50;
+    --border-radius: 12px;
+    --spacing: 1.5rem;
+    --font-size: 1rem;
+    --button-padding: 0.75rem 1.5rem;
+    --box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing);
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: var(--spacing) 0;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    display: flex;
+    align-items: left;
+    gap: 10px;
+}
+
+main.content {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing);
+    margin-top: var(--spacing);
+}
+
+.input-section, .output-section {
+    flex: 1;
+    padding: var(--spacing);
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.input-section h2 {
+    margin-bottom: var(--spacing);
+    color: var(--primary-color);
+    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+    border: 1px solid #ccc;
+    margin-bottom: var(--spacing);
+    font-size: var(--font-size);
+    resize: none;
+    box-sizing: border-box;
+    background-color: var(--accent-color);
+    box-shadow: inset var(--box-shadow);
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.options {
+    margin-bottom: var(--spacing);
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.buttons {
+    display: flex;
+    gap: var(--spacing);
+}
+
+button {
+    flex: 1;
+    padding: var(--button-padding);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+    background-color: var(--primary-color);    
+}
+
+#encrypt-btn {
+    background-color: var(--btn-color);
+    color: white;
+}
+
+#encrypt-btn:hover {
+    background-color: var(--button-hover-color);
+}
+
+#decrypt-btn {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+#decrypt-btn:hover {
+    background-color: #d0d7de;
+}
+
+#copy-btn {
+    background-color: var(--accent-color);
+    color: Black;
+    margin-top: var(--spacing);
+    width: 100%;
+}
+
+#copy-btn:hover {
+    background-color: var(--button-hover-color);
+    color: White;
+}
+
+.output-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+    background-color: white;
+}
+
+.output-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-color);
+}
+
+.output-placeholder i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+}
+
+.output-placeholder p {
+    margin: 0;
+    font-weight: bold;
+    color: var(--text-color);
+    font-size: 1.25rem;
+}
+
+.output-placeholder span {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+textarea#output-text {
+    display: none;
+    width: 100%;
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+    border: 1px solid #ccc;
+    margin-bottom: var(--spacing);
+    font-size: var(--font-size);
+    resize: none;
+    box-sizing: border-box;
+    background-color: var(--accent-color);
+    box-shadow: inset var(--box-shadow);
+}
+
+@media (max-width: 768px) {
+    main.content {
+        flex-direction: column;
+    }
+
+    .input-section, .output-section {
+        margin-bottom: var(--spacing);
+    }
+
+    button {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        justify-content: center;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    main.content {
+        margin-top: var(--spacing);
+    }
+}
+
+
+
